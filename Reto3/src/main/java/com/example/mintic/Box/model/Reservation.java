@@ -29,7 +29,7 @@ public class Reservation {
     @ManyToOne
     @JoinColumn(name = "BoxId")
     @JsonIgnoreProperties("reservations")
-    private Box Box;
+    private Box box;
 
     @ManyToOne
     @JoinColumn(name = "clientId")
@@ -94,13 +94,13 @@ public class Reservation {
 
 
     public Box getBox() {
-        return Box;
+        return box;
     }
 
 
 
-    public void setBox(Box Box) {
-        this.Box = Box;
+    public void setBox(Box box) {
+        this.box = box;
     }
 
 
