@@ -21,7 +21,7 @@ public class Box implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String owner;
+    private String location;
     private Integer capacity;
     private String description;
 
@@ -32,13 +32,13 @@ public class Box implements Serializable {
     private Category category;
 
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "Box") //cascade = {CascadeType.PERSIST},
-    @JsonIgnoreProperties({"Box","client"})
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "box") //cascade = {CascadeType.PERSIST},
+    @JsonIgnoreProperties({"box","client","messages","reservations"})
     //@JsonIgnoreProperties({"Box"})
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "box") //cascade = {CascadeType.PERSIST},
-    @JsonIgnoreProperties({"Box","messages"})
+    @JsonIgnoreProperties({"box","messages","client","reservations"})
     //@JsonIgnoreProperties({"Box"})
     public List<Reservation> reservations;
     
@@ -54,11 +54,11 @@ public class Box implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    public String getOwner() {
-        return owner;
+    public String getLocation() {
+        return location;
     }
-    public void setOwner(String owner) {
-        this.owner = owner;
+    public void setLocation(String location) {
+        this.location = location;
     }
     public Integer getCapacity() {
         return capacity;

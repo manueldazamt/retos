@@ -22,9 +22,9 @@ public class Message {
 
     @ManyToOne
     @JoinColumn(name="BoxId")
-    @JsonIgnoreProperties({"messages","reservations"})
+    @JsonIgnoreProperties({"messages","reservations","box"})
     //@JsonIgnoreProperties({"messages"})
-    private Box Box;
+    private Box box;
 
 
     @ManyToOne
@@ -46,10 +46,10 @@ public class Message {
         this.messageText = messageText;
     }
     public Box getBox() {
-        return Box;
+        return box;
     }
-    public void setBox(Box Box) {
-        this.Box = Box;
+    public void setBox(Box box) {
+        this.box = box;
     }
     public Client getClient() {
         return client;
