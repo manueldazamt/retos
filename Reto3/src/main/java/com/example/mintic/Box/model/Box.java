@@ -37,7 +37,7 @@ public class Box implements Serializable {
     //@JsonIgnoreProperties({"Box"})
     private List<Message> messages;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "Box") //cascade = {CascadeType.PERSIST},
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "box") //cascade = {CascadeType.PERSIST},
     @JsonIgnoreProperties({"Box","messages"})
     //@JsonIgnoreProperties({"Box"})
     public List<Reservation> reservations;
